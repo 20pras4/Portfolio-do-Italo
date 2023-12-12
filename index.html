@@ -33,90 +33,55 @@
     <title>Tutorial QGIS</title>
 </head>
 
-<body>
-    <nav class="navbar navbar-custom navbar-expand-lg fixed-top">
-        <div class="container-fluid">
-            <a href="index.html" class="navbar-brand me-md-5" style="color:white">
-                Tutorial
-                <img class="img p-1" src="images/main_logo_qgis.png">
-            </a>
-            
+<body data-bs-spy="scroll" data-bs-target="#navbar-progress" data-bs-offset="500" > 
+
+    <nav class="navbar navbar-custom navbar-expand-lg fixed-top " height="100%" >
+        <div class="container-fluid" >
+
+            <a href="index.html" class="navbar-brand me-md-5" style="color:white">Tutorial <strong style="color:white">Geo</strong><strong style="color:white">Sampa</strong> <img class="img p-1" src="images/logo_header.jpg" style="width:44px;height:44px;"> </a>
+
+            <!-- 
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="align-items: center;" >
+            -->  
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent, #navbar-progress" aria-controls="navbarSupportedContent, navbar-progress" aria-expanded="false" aria-label="Toggle navigation" style="align-items: center;" >
                 <span class="navbar-toggler-icon"></span>
             </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                <ul class="navbar-nav me-auto ms-5 mb-2 mb-lg-0">
+
+                    <li class="nav-item dropdown ms-md-5">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: aliceblue;">Consultas</a>
+                        <ul class="dropdown-menu bg-light" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#infos-lotes">Informações do Lote - SQL</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><h6 class="dropdown-header">Baseadas em SQL</h6></li>
+                            <li><a class="dropdown-item" href="#licenciamento">Licenciamento - sistema SLCe</a></li>
+                            <li><a class="dropdown-item" href="#zoneamento">Zoneamento - SIZON</a></li>
+                            <li><a class="dropdown-item" href="#IPTU">IPTU</a></li>
+                            <li><h6 class="dropdown-header">Outras consultas</h6></li>
+                            <li><a class="dropdown-item" href="#download-croquis-plantas">Download de croquis e plantas</a></li>
+                            <li><a class="dropdown-item" href="#marco-geodesico">Marco Geodésico e Pontos de Apoio Terrestre</a></li>
+                            <li><a class="dropdown-item" href="#img-mdc">Download de Imagens e MDC</a></li>
+                        </ul>
+
+                    <li hidden class="nav-item">
+                        <a class="nav-link" href="04.html">Mapa do Site</a>
+                    </li>
+
+                </ul>
+
+                <form class="d-flex" action="search.html">
+                    
+                <input class="form-control me-2" type="text" name="q" placeholder="Busca" aria-label="Busca" id="tipue_search_input"></input>
+                <input type="button" id="tipue_search_button" onclick="this.form.submit();"></input>
+
+                </form>
+            </div>
         </div>
     </nav>
-    <div class="container-fluid pt-5">
-        <div class="row">
-            <div class="col-2 col-xs-1 pt-6 position-fixed h-100">
-                <nav id="navbar-progress"
-                    class="navbar navbar-nav-scroll mobile-offcanvas navbar-light flex-column align-items-stretch p-1">
-                    <!-- Conteúdo do menu lateral -->
-                    <ul class="nav nav-pills flex-column">
-                        <li id="nivel1" class="nav-item">
-                            <a class="nav-link" href="#1">1. Instalação</a>
-                            <ul class="nav nav-pills flex-column">
-                                <li id="nivel2" class="nav-item ms-5">
-                                    <a class="nav-link" href="#1.1">Link para instalador</a>
-                                    <a class="nav-link" href="#configurando-ambiente">Configurando o ambiente</a>
-                                    <a class="nav-link" href="#configurando-ambiente">Configurando o ambiente</a>
-                                    <a class="nav-link" href="#configurando-ambiente">Configurando o ambiente</a>
-                                    <a class="nav-link" href="#configurando-ambiente">Configurando o ambiente</a>
-                                    <a class="nav-link" href="#configurando-ambiente">Configurando o ambiente</a>
-                                    <a class="nav-link" href="#configurando-ambiente">Configurando o ambiente</a>
-                                    <a class="nav-link" href="#configurando-ambiente">Configurando o ambiente</a>
-                                    <a class="nav-link" href="#configurando-ambiente">Configurando o ambiente</a>
-                                    <a class="nav-link" href="#configurando-ambiente">Configurando o ambiente</a>
-                                    <a class="nav-link" href="#configurando-ambiente">Configurando o ambiente</a>
-                                    <a class="nav-link" href="#configurando-ambiente">Configurando o ambiente</a>
-                                </li>
-                            </ul>
-                            <a class="nav-link" href="#especif-tecnicas">Especificações técnicas</a>
-                            <ul class="nav nav-pills flex-column">
-                                <li id="nivel2" class="nav-item ms-5">
-                                    <a class="nav-link" href="#configurando-ambiente">Configurando o ambiente</a>
-                                    <a class="nav-link" href="#configurando-ambiente">Configurando o ambiente</a>
-                                    <a class="nav-link" href="#configurando-ambiente">Configurando o ambiente</a>
-                                    <a class="nav-link" href="#configurando-ambiente">Configurando o ambiente</a>
-                                    <a class="nav-link" href="#configurando-ambiente">Configurando o ambiente</a>
-                                    <a class="nav-link" href="#configurando-ambiente">Configurando o ambiente</a>
-                                    <a class="nav-link" href="#configurando-ambiente">Configurando o ambiente</a>
-                                    <a class="nav-link" href="#configurando-ambiente">Configurando o ambiente</a>
-                                    <a class="nav-link" href="#configurando-ambiente">Configurando o ambiente</a>
-                                    <a class="nav-link" href="#configurando-ambiente">Configurando o ambiente</a>
-                                    <a class="nav-link" href="#configurando-ambiente">Configurando o ambiente</a>
-                                    <a class="nav-link" href="#configurando-ambiente">Configurando o ambiente</a>
-                                </li>
-                            </ul>
-                            <a class="nav-link" href="#especif-tecnicas">Especificações técnicas</a>
-                            <ul class="nav nav-pills flex-column">
-                                <li id="nivel2" class="nav-item ms-5">
-                                    <a class="nav-link" href="#configurando-ambiente">Configurando o ambiente</a>
-                                    <a class="nav-link" href="#configurando-ambiente">Configurando o ambiente</a>
-                                    <a class="nav-link" href="#configurando-ambiente">Configurando o ambiente</a>
-                                    <a class="nav-link" href="#configurando-ambiente">Configurando o ambiente</a>
-                                    <a class="nav-link" href="#configurando-ambiente">Configurando o ambiente</a>
-                                    <a class="nav-link" href="#configurando-ambiente">Configurando o ambiente</a>
-                                    <a class="nav-link" href="#configurando-ambiente">Configurando o ambiente</a>
-                                    <a class="nav-link" href="#configurando-ambiente">Configurando o ambiente</a>
-                                    <a class="nav-link" href="#configurando-ambiente">Configurando o ambiente</a>
-                                    <a class="nav-link" href="#configurando-ambiente">Configurando o ambiente</a>
-                                    <a class="nav-link" href="#configurando-ambiente">Configurando o ambiente</a>
-                                    <a class="nav-link" href="#configurando-ambiente">Configurando o ambiente</a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <form class="d-flex" action="search.html">
-                    
-                        <input class="form-control me-2" type="text" name="q" placeholder="Busca" aria-label="Busca" id="tipue_search_input"></input>
-                        <input type="button" id="tipue_search_button" onclick="this.form.submit();"></input>
-        
-                </nav>
-            </div>
-            <!-- Restante do conteúdo da página -->
-        </div>
-    </div>
+      
     <div class="col col-xs-11 col-md-8 col-xl-6 px-4 position-absolute alinhamento">
         <h1 class="pb-2"><br><br>Introdução</h1>
         <p>Este material foi elaborado visando auxiliar aqueles que necessitam utilizar ferramentas de SIG para produção

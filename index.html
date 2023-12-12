@@ -1,21 +1,746 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Hello Bulma!</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-  </head>
-  <body>
-  <section class="section">
-    <div class="container">
-      <h1 class="title">
-        Hello World
-      </h1>
-      <p class="subtitle">
-        My first website with <strong>Bulma</strong>!
-      </p>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="">
+    <meta name="author" content="smdu-geoinfo">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="tipuesearch/tipuesearch.css">
+    <script type="text/javascript" src="tipuesearch/tipuesearch.js"></script>
+    <script src="Js.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script type="text/javascript" src="tipuesearch/tipuesearch_set.js"></script>
+    <script type="text/javascript" src="tipuesearch/tipuesearch_content.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+
+    <style>
+        p {
+            text-align: justify;
+        }
+
+        body {
+            padding-top: 45px;
+            /* Ajuste este valor conforme necessário para compensar a altura da barra de navegação */
+        }
+    </style>
+    <title>Tutorial QGIS</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-custom navbar-expand-lg fixed-top">
+        <div class="container-fluid">
+            <a href="index.html" class="navbar-brand me-md-5" style="color:white">
+                Tutorial
+                <img class="img p-1" src="images/main_logo_qgis.png">
+            </a>
+        </div>
+    </nav>
+    <div class="container-fluid pt-5">
+        <div class="row">
+            <div class="col-2 col-xs-1 pt-6 position-fixed h-100">
+                <nav id="navbar-progress"
+                    class="navbar navbar-nav-scroll mobile-offcanvas navbar-light flex-column align-items-stretch p-1">
+                    <!-- Conteúdo do menu lateral -->
+                    <ul class="nav nav-pills flex-column">
+                        <li id="nivel1" class="nav-item">
+                            <a class="nav-link" href="#1">1. Instalação</a>
+                            <ul class="nav nav-pills flex-column">
+                                <li id="nivel2" class="nav-item ms-5">
+                                    <a class="nav-link" href="#1.1">Link para instalador</a>
+                                    <a class="nav-link" href="#configurando-ambiente">Configurando o ambiente</a>
+                                    <a class="nav-link" href="#configurando-ambiente">Configurando o ambiente</a>
+                                    <a class="nav-link" href="#configurando-ambiente">Configurando o ambiente</a>
+                                    <a class="nav-link" href="#configurando-ambiente">Configurando o ambiente</a>
+                                    <a class="nav-link" href="#configurando-ambiente">Configurando o ambiente</a>
+                                    <a class="nav-link" href="#configurando-ambiente">Configurando o ambiente</a>
+                                    <a class="nav-link" href="#configurando-ambiente">Configurando o ambiente</a>
+                                    <a class="nav-link" href="#configurando-ambiente">Configurando o ambiente</a>
+                                    <a class="nav-link" href="#configurando-ambiente">Configurando o ambiente</a>
+                                    <a class="nav-link" href="#configurando-ambiente">Configurando o ambiente</a>
+                                    <a class="nav-link" href="#configurando-ambiente">Configurando o ambiente</a>
+                                </li>
+                            </ul>
+                            <a class="nav-link" href="#especif-tecnicas">Especificações técnicas</a>
+                            <ul class="nav nav-pills flex-column">
+                                <li id="nivel2" class="nav-item ms-5">
+                                    <a class="nav-link" href="#configurando-ambiente">Configurando o ambiente</a>
+                                    <a class="nav-link" href="#configurando-ambiente">Configurando o ambiente</a>
+                                    <a class="nav-link" href="#configurando-ambiente">Configurando o ambiente</a>
+                                    <a class="nav-link" href="#configurando-ambiente">Configurando o ambiente</a>
+                                    <a class="nav-link" href="#configurando-ambiente">Configurando o ambiente</a>
+                                    <a class="nav-link" href="#configurando-ambiente">Configurando o ambiente</a>
+                                    <a class="nav-link" href="#configurando-ambiente">Configurando o ambiente</a>
+                                    <a class="nav-link" href="#configurando-ambiente">Configurando o ambiente</a>
+                                    <a class="nav-link" href="#configurando-ambiente">Configurando o ambiente</a>
+                                    <a class="nav-link" href="#configurando-ambiente">Configurando o ambiente</a>
+                                    <a class="nav-link" href="#configurando-ambiente">Configurando o ambiente</a>
+                                    <a class="nav-link" href="#configurando-ambiente">Configurando o ambiente</a>
+                                </li>
+                            </ul>
+                            <a class="nav-link" href="#especif-tecnicas">Especificações técnicas</a>
+                            <ul class="nav nav-pills flex-column">
+                                <li id="nivel2" class="nav-item ms-5">
+                                    <a class="nav-link" href="#configurando-ambiente">Configurando o ambiente</a>
+                                    <a class="nav-link" href="#configurando-ambiente">Configurando o ambiente</a>
+                                    <a class="nav-link" href="#configurando-ambiente">Configurando o ambiente</a>
+                                    <a class="nav-link" href="#configurando-ambiente">Configurando o ambiente</a>
+                                    <a class="nav-link" href="#configurando-ambiente">Configurando o ambiente</a>
+                                    <a class="nav-link" href="#configurando-ambiente">Configurando o ambiente</a>
+                                    <a class="nav-link" href="#configurando-ambiente">Configurando o ambiente</a>
+                                    <a class="nav-link" href="#configurando-ambiente">Configurando o ambiente</a>
+                                    <a class="nav-link" href="#configurando-ambiente">Configurando o ambiente</a>
+                                    <a class="nav-link" href="#configurando-ambiente">Configurando o ambiente</a>
+                                    <a class="nav-link" href="#configurando-ambiente">Configurando o ambiente</a>
+                                    <a class="nav-link" href="#configurando-ambiente">Configurando o ambiente</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <!-- Restante do conteúdo da página -->
+        </div>
     </div>
-  </section>
-  </body>
+    <div class="col col-xs-11 col-md-8 col-xl-6 px-4 position-absolute alinhamento">
+        <h1 class="pb-2"><br><br>Introdução</h1>
+        <p>Este material foi elaborado visando auxiliar aqueles que necessitam utilizar ferramentas de SIG para produção
+            de material cartográfico, seja para visualização, consulta, análise ou elaboração de dados primários, a
+            partir dos dados obtidos do portal GeoSampa.</p>
+        <p>Devido a necessidade cada vez maior da utilização de ferramentas de geoprocessamento e com a publicação do
+            GeoSampa, o material pode, agora, ser consultado por todos.</p>
+        <p>QGIS é uma opção de software livre, abdicando da necessidade de aquisição de licenças para acesso às
+            ferramentas de tratamento de dados espaciais. Por isso, temos atualização periódica de versão, e assim, um
+            permanente ciclo de aprendizado.</p>
+        <p>Para elaboração deste documento foi utilizada a versão LTR mais atual, 2.18 (Las Palmas), ainda que já
+            estejam à disposição versões mais atualizadas. No QGIS, há três tipos de versão: “Última”, “Desenvolvimento”
+            e “Estável” (Versão de Longo Prazo ou LTR). As versões LTR têm como característica fornecer uma plataforma
+            estável e menos frequentemente alterada para empresas e organizações que não querem lidar com atualização
+            das habilidades do usuário, materiais de treinamento etc. Por esses motivos, sugere-se sempre a adoção da
+            última versão LTR como versão de uso em ambiente corporativo, em especial por ser a versão mais atual
+            estável.</p>
+        <h1 id="1"><br><br>1.Instalação</h1>
+        <hr>
+        <h2 id="1.1"><br><br>1.1 Link para instalador</h2>
+        <p>A melhor opção é descarregar o instalador do QGIS a partir do sítio www.qgis.org. Trata-se de um instalador
+            clássico de único clique, com que a maioria dos usuários de aplicativos está familiarizada. Existem versões
+            para vários sistemas operacionais, incluindo Windows, Linux, Mac OS X e Android. </p>
+        <h2 id="1.2"><br><br>1.2. Instalar complementos (plugins).</h2>
+        <p>Sendo um projeto open source, o QGIS oferece um mundo de possibilidades extremamente interessantes por meio
+            de funcionalidades extra (plugins), que são desenvolvidas e disponibilizadas pela comunidade de utilizadores
+            (users) e desenvolvedores (developers) do QGIS. O QGIS aceita plugins escritos em C++ ou em Python. Estes
+            últimos podem ser instalados diretamente a partir do QGIS.</p>
+        <p>A gestão dos plugins faz-se pelo menu “Complementos”. Neste menu, podemos fazer download de novos plugins a
+            partir da internet e gerir os plugins que, estando instalados, podem ou não estar visíveis.
+            Obs: Em virtude de bloqueio de segurança (firewall) da intranet da Prefeitura, deve ser configurado o acesso
+            via HttpProxy, no menu Configurações > Opções > Rede, conforme a figura a seguir:</p>
+        <p>O acesso se dá conforme cada usuário utilizando-se o respectivo nome de usuário e senha cadastrada (senha de
+            login) de login na rede PMSP. Lembre-se de também alterar a sua senha nesse campo sempre que ela for
+            alterada para fazer o login na rede da PMSP.</p>
+        <p>Fazer download do plugins a partir da opção “Instalados” ou “Tudo”. Podemos digitar o nome para localizar
+            rapidamente o complemento desejado, ou buscar na lista. É importante lembrar-se de marcar a caixa de seleção
+            dos complementos que se deseja usar para que eles fiquem ativos.</p>
+        <h2 id="1.3"><br><br>1.3. Complemento “QUICKMAPSERVICES”</h2>
+        <p>Esse plugin permite adicionar uma camada web (mapas online) a um projeto do QGIS. Estas camadas são
+            provenientes de serviços online de mapeamento, como Google Earth, Google Maps, OpenStreetMap, entre outros.
+            Esse plugin substitui o plugin OpenLayers, considerado obsoleto e não mais indicado para uso no QGis. O
+            plugin
+            QUICKMAPSERVICES, além de se mostrar mais robusto que o OpenLayers, não apresenta problema de deslocamento
+            das camadas na geração de mapas para impressão, além de possuir mais servidores de base maps.</p>
+        <p>Após instalar o complemento, ele estará disponível no menu Web, conforme a imagem a seguir. Para habilitar
+            todos os recursos disponíveis do complemento é necessário acessar a opção de configurações (Settings),
+            conforme mostra a imagem a seguir.</p>
+        <p>Na janela que se abrir, vá até a aba “More services” e clique no botão “Get contributed pack”.
+            Após isso, será exibida a mensagem de carregamento de todos os pacotes disponíveis para utilização do
+            plugin, conforme a imagem abaixo. Em seguida, clique em OK e depois em Gravar.</p>
+        <p>Feito isso, ao acessar o plugin pelo menu Web serão exibidos vários serviços de imagem. No exemplo abaixo
+            está sendo usado o serviço do Google Terrain, mas existem várias outras opções, como o Bing, Esri, Waze,
+            Landsat, Open Street e outros.</p>
+        <h1 id="2"><br><br>2. INTERFACE E FERRAMENTAS DO QGIS DESKTOP </h1>
+        <p>Na primeira utilização, o QGIS reconhece painéis que podem ser geridos a partir do menu Exibir > Painéis:
+            Painel camadas (mostra quais as camadas de informação carregadas): Inicialmente só o painel “camadas” estará
+            ativo. Outros painéis poderão ficar disponíveis em função dos plugins que venham a ser instalados.</p>
+        <p>Igualmente importante é conhecer as barras de ferramentas (toolbars) inicialmente disponíveis. As barras de
+            ferramentas podem ser ativadas ou desativadas a partir do menu Exibir > Barra de ferramentas.</p>
+        <p>O QGIS apresenta uma interface que pode ser completamente customizada de acordo com as suas necessidades. A
+            seguir é apresentada a tela inicial do programa em sua configuração padrão.</p>
+        <h4>Navegação e Zoom</h4>
+        <p>Com o projeto aberto, aproxime-se da sua região de interesse por meio das ferramentas para movimentação e
+            zoom que, por sua natureza, são autoexplicativas. Também lembramos que ao posicionar o cursor do mouse sobre
+            o símbolo na barra, aparece uma legenda com o nome da função. </p>
+        <h2 id="2.1"><br><br>2.1. Projeto </h2>
+        <p>O projeto para o QGIS será um arquivo na extensão *.qgs que reúne as informações sobre as camadas
+            adicionadas,
+            as propriedades de visualização das camadas, a projeção e datum em que a visualização do mapa ocorrerá e a
+            última visualização salva das camadas. Só é possível trabalhar com um projeto de cada vez.</p>
+        <p>No caso da edição de conteúdo (geometria e atributos) de uma única camada, não há necessidade de se criar um
+            projeto. Pode-se adicionar apenas a camada de interesse e trabalhar com ela.</p>
+        <h3 id="2.1.1"><br><br>2.1.1. Propriedades do projeto.</h3>
+        <p>Para acessar as configurações do projeto acesse o menu Projeto > Propriedades do Projeto ou diretamente
+            clicando
+            “Crtl + Shift + P”</p>
+        <p>Será aberta uma janela conforme as figuras abaixo:</p>
+        <p>- A primeira aba das propriedades do projeto, Geral, permite dar um nome ao projeto, definir as cores de
+            fundo e
+            seleção, as unidades e a precisão do projeto. Neste item, definir para o campo “Salvar Caminhos” a opção
+            “Relativo” pois a mesma permite que o projeto seja salvo em HDs externos ou pendrives, diminuindo problemas
+            quando o projeto for aberto em outras máquinas.</p>
+        <p>- A segunda aba SRC, permite definir o sistema de coordenadas – projeção e datum. Ative “Habilitar
+            transformação
+            SRC dinâmica” caso trabalhe com arquivos em projeções diferentes ao mesmo tempo. As outras abas da
+            configuração
+            do projeto não necessitam ter suas configurações padrão alteradas.</p>
+        <p>Depois dessas configurações o QGIS estará pronto para ser utilizado.</p>
+        <h3 id="2.1.2"><br><br>2.1.2. SRC - Sistemas de Coordenadas</h3>
+        <p>É aconselhável que o sistema de coordenadas do projeto esteja definido à priori. O SRC (Sistema de
+            Referência de Coordenadas) pode ser definido em Configurações > Opções. O padrão adotado é o da EPSG
+            (European Petroleum Survey Group).</p>
+        <p>A base cartográfica da cidade de São Paulo – Mapa Digital da Cidade (MDC) – foi originalmente elaborada com
+            referência ao South American Datum 1969, realização 1996 – SAD69(96), coordenadas UTM, fuso/zona 23, que
+            está disponível no QGIS segundo o código EPSG:5533.</p>
+        <p>O Geosampa já adota como referencial o SIRGAS2000 em conformidade com a determinação de padronização do
+            IBGE, que desde 25 de fevereiro de 2015, instituiu o SIRGAS2000 (Sistema de Referência Geocêntrico para as
+            Américas) como o único sistema geodésico de referência oficialmente adotado no Brasil. Entre 25 de fevereiro
+            de 2005 e 25 de fevereiro de 2015, admitia-se o uso, além do SIRGAS2000, dos referenciais SAD 69 (South
+            American Datum 1969) e Córrego Alegre.</p>
+        <p>Para isso, arquivos e projetos em coordenadas UTM fuso/zona 23S devem ser definidos pelo EPSG:31983 e
+            sugere-se que esse seja o sistema de coordenadas padrão a ser adotado no QGIS.</p>
+        <p>Ainda existem programas antigos em uso na PMSP que não possuem essa opção, mas que foram e ainda são usados
+            na produção de dados. Em alguns casos a informação trabalhada corresponde ao sistema SAD69/UTM 23S, código
+            EPSG:29193. Para evitar problemas recomenda-se sempre consultar os metadados do projeto.</p>
+        <p>Dadas essas configurações possíveis, recomenda-se cuidado na escolha do SRC. A maioria dos programas gera um
+            arquivo *.prj como registro dos parâmetros, que entretanto, nem sempre é lido corretamente pelo QGIS. Ou
+            seja, quando houver dúvida, a configuração deve ser feita pelo usuário ignorando (apagando) o arquivo PRJ.
+        </p>
+        <p>Se não estivermos seguros do sistema de coordenadas de uma dada camada, podemos ativar a opção “Habilitar
+            reprojeção 'dinâmica' automaticamente se as camadas possuírem SRC diferente" de forma a que o QGIS
+            sobreponha automaticamente duas camadas com SRC distintos. No entanto, há que ter em conta que o SRC das
+            camadas não é alterado, o que obriga o computador a consumir mais recursos a processar informação. Por isso,
+            recomenda-se a conversão dos dados para o mesmo SRC em todos os arquivos disponíveis.</p>
+        <p>Para conversão de SRC SAD69(96) para SIRGAS2000, os parâmetros funcionam corretamente pelo comando “Salvar
+            como” disponível ao clicar com o botão direito sobre a camada no painel.</p>
+        <h1 id="3"><br><br>3.OPERAÇÕES BÁSICAS EM ARQUIVOS</h1>
+        <h2 id="3.1"><br><br>3.1.Adicionar dados vetoriais.</h2>
+        <p>O QGIS possibilita trabalhar com diversos tipos de dados vetoriais dentre os quais podemos
+            destacar:</p>
+        <p>- Arquivo shape ESRI (*.shp): Formato atualmente aberto, é nativo do principal software comercial
+            de Sistemas de Informação Geográfica, geralmente é formado por pelo menos 3 arquivos com as
+            seguintes extensões: .shp (dados vetoriais), .dbf (banco de dados) e .shx (arquivo de ligação
+            entre o .shp e .dbf), outro arquivo que pode acompanhar estes três é o arquivo de projeção .prj
+            (nativo do principal software comercial, mas reconhecido pelo QGIS) ou o arquivo .qpj (nativo do
+            QGIS), estes dois arquivos armazenam o sistema de coordenadas e datum da camada;</p>
+        <p>- Valores separados por vírgula (*.csv): Formato bastante leve e rápido de ser processado que
+            pode ser produzido em editores de texto;</p>
+        <p>- Keyhole Markup Language [KML] (*.kml): Formato produzido inicialmente para ser visualizado no
+            software Google Earth. Diversos sites atualmente distribuem informações neste formato;</p>
+        <p>- Geographic Markup Language (*.gml): Padrão de intercâmbio de dados geográficos baseado em XML
+            (eXtensible Markup Language). Esse é um dos formatos adotados para publicação de dados
+            geoespaciais em formato aberto, junto com o shapefile.</p>
+        <p>- AutoCAD Drawing Interchange Format (*.dxf): Formato do principal software de Desenho Assistido
+            por Computador (CAD) utilizado em todo o mundo. A forma como os arquivos vetoriais são
+            produzidos nos programas CAD pode dificultar a abertura dos mesmos. Por isso, hachuras, arquivos
+            “Xref” e elementos que não fazem parte do mapa devem ser evitados. Quanto mais o desenho tiver
+            geometria baseada em pontos, linhas e polígonos mais facilmente o arquivo será reconhecido e
+            menor a possibilidade de conflitos.</p>
+        <p>Para visualizar tais arquivos no QGIS temos três opções:</p>
+        <p>I. Utilizar a Barra de Menu Camada -> Adicionar camada -> vetorial;</p>
+        <p>II. Utilizar o atalho Ctrl +Shift +V;</p>
+        <p>III. Utilizar a Barra de Ferramentas / Gerenciar Camadas clicando no item Adicionar Camada;</p>
+        <p>Em seguida será aberta a tela a seguir:</p>
+        <p>Selecione a opção “Arquivo”, mude a codificação para “CP1252” para permitir que na tabela de
+            atributos não haja problemas no reconhecimento de caracteres e acentuação e finalmente clique em
+            “Buscar” para que seja aberta a tela a seguir, na qual é possível escolher os arquivos. No menu
+            ao lado do nome, no item “Tipos de arquivos”, é possível escolher entre os vários formatos
+            suportados.</p>
+        <h2 id="3.2"><br><br>3.2. Adicionar dados matriciais (raster).</h2>
+        <p>O QGIS permite trabalhar com diversos formatos de imagem, dentre as mais comuns estão:
+            - JPEG - Joint Pictures Expert Group (*.jpg): é um formato de imagem que por meio de compressão
+            elimina as informações de cores que o olho humano não é capaz de detectar e, em função disso,
+            apesar de haver perda de qualidade, ela não é facilmente percebida. Com isso os arquivos gerados
+            são de tamanho relativamente pequeno;</p>
+        <p>- TIFF - Tagged Image File Format (*.tif): foi desenvolvido em 1986 em uma tentativa de criar um
+            padrão para imagens geradas por equipamentos digitais. O formato é capaz de armazenar imagens em
+            preto ou branco, escalas de cinza e em paletas de cores com 24 ou com 32 bits;</p>
+        <p>- GeoTIFF (*.tif): é um padrão de metadados de domínio público que permite embutir informações
+            das coordenadas geográficas em um arquivo TIFF. A informação adicional potencial inclui
+            projeções cartográficas, sistema de coordenadas, elipsóides, datums e tudo mais necessário para
+            estabelecer a referência espacial exata no arquivo;</p>
+        <p>- MrSID - Multiresolution Seamless Image Database (*.sid): pronunciado Mister Sid, é um formato
+            desenvolvido e patenteado pela LizardTech para codificação de imagens matriciais
+            georeferenciadas, tais como ortofotos.</p>
+        <P>Para visualizar tais arquivos no QGIS temos 3 opções:</p>
+        <p>I. Utilizar a Barra de Menu Camada > Adicionar camada > raster;</p>
+        <p>II. Atalho Ctrl+ Shift+ R;</p>
+        <p>III. Utilizar a Barra de Ferramentas / Gerenciar Camadas clicando no item “Adicionar camada
+            raster”;</p>
+        <h2 id="3.3"><br><br>3.3. Georeferenciar imagens matriciais (raster)</h2>
+        <p>O complemento Georeferenciador GDAL permite georeferenciar imagens matriciais (raster) para
+            um sistema de coordenadas geográficas ou projetadas (métricas), por meio da criação de uma
+            nova imagem GeoTIFF ou por meio da adição de um arquivo world com extensão .prj à imagem
+            existente. A maneira básica para georeferenciar uma imagem raster consiste em localizar
+            pontos no arquivo, cujas coordenadas possam ser determinadas com a maior precisão possível.</p>
+        <h4>Procedimento comum</h4>
+        <p>Para inserir as coordenadas – Lat/Long (geográficas) ou X e Y (cartesianas) em pontos
+            selecionados, de forma a realizar o georeferenciamento da imagem, dois procedimentos podem
+            ser aplicados:</p>
+        <p>a. A própria imagem raster pode algumas vezes fornecer/apresentar interseções entre
+            meridianos e paralelos da grade, com coordenadas expressas na imagem. Neste caso, pode-se
+            inserir “manualmente” as coordenadas;</p>
+        <p>b. Usando camadas georeferenciadas, que podem conter informação vetorial ou matricial que
+            contenham os mesmos objetos/elementos que estejam na imagem. Neste caso, podemos introduzir
+            as coordenadas clicando no mapa.</p>
+        <p>O procedimento habitual para o georeferenciamento de uma imagem consiste em selecionar
+            múltiplos pontos no raster, especificar suas coordenadas e escolher o tipo de transformação
+            mais apropriado para o arquivo. Baseado nos dados e parâmetros de entrada, o complemento irá
+            computar os parâmetros do arquivo world ou então criar um novo GeoTIFF.</p>
+        <p>Quanto mais pontos de controle (coordenadas) forem informados, melhor será o resultado do
+            processo.</p>
+        <p>O primeiro passo é iniciar o QGIS, carregar o complemento
+            Georeferenciador. Para isso, clique no ícone que aparece no menu da barra de ferramentas, ou
+            pelo menu em Raster > Georeferenciador > Georeferenciar. A janela do módulo do
+            Georeferenciador é mostrada a seguir.</p>
+        <h4>Pontos de controle - GCPs (Ground Control Points)</h4>
+        <p>1. Para inicar o georeferenciamento de um raster, necessitamos carregá-lo usando o botão .
+            O raster será mostrado na janela principal da área de trabalho. Uma vez carregado o raster,
+            devemos definir o SRC para podermos começar a introduzir pontos de referência.</p>
+        <p>2. O botão é usado para adicionar pontos na área de trabalho principal e introduzir as suas
+            coordenadas. Para este procedimento, temos três opções:</p>
+        <p>• Clique em determinado ponto da imagem raster e entre com suas coordenadas X e Y
+            manualmente.</p>
+        <p>• Clique no ponto da imagem matricial e escolha o botão:<br>
+            A seguir, adicionar as coordenadas X e Y com a ajuda do mapa georeferenciado que já deve
+            estar carregado e ativo na tela do QGIS.</p>
+        <p>• Com o botão , pode-se mover os GCP em ambas as janelas, se
+            estiverem no lugar errado.</p>
+        <p>3. Continue inserindo os pontos de controle. São necessários no mínimo quatro pontos
+            (espalhados pelos quatro cantos da imagem), e quanto mais pontos (coordenadas) forem
+            adicionados, melhor será o resultado obtido. Existem ferramentas adicionais na caixa de
+            diálogo do complemento para usar o zoom e pan na tela, a fim de que seja possível localizar
+            um conjunto de possíveis GCPs.</p>
+        <p>Os pontos que adicionar ao mapa serão guardados em um arquivo de texto separado normalmente
+            junto com a imagem raster. Isto permite que possamos reabrir o módulo do Georeferenciador
+            mais tarde e adicionar novos pontos ou apagar existentes, para otimizar o resultado. O
+            arquivo de pontos contém valores na forma de mapX, mapY, pixelX, pixelY .</p>
+        <p>Podemos usar o botão "Carregar pontos GCP" e o botão "Salvar pontos GCP como" para gerir os
+            arquivos.</p>
+        <h4>Configurações de transformação</h4>
+        <p>Depois que os pontos GCP estão devidamente adicionados à imagem raster, é necessário definir
+            as configurações de transformação para o processo de georeferenciamento.</p>
+        <h4>Algoritmos de transformação disponíveis</h4>
+        <p>Dependendo da quantidade de pontos de controle capturados, será possível a utilização de
+            diferentes algoritmos de transformação. A escolha de um desses algoritmos também depende do
+            tipo e da qualidade dos dados de entrada inseridos e a quantidade de distorção geométrica
+            que se está disposto a introduzir no resultado final.</p>
+        <h4>Tipos de transformação</h4>
+        <p>Atualmente, os seguintes estão disponíveis:</p>
+        <p>• O algoritmo linear é usado para criar o world-file e, diferente dos outros algoritmos, não
+            transforma verdadeiramente o raster. Este algoritmo provavelmente não será suficiente se
+            estiver trabalhando com material digitalizado;</p>
+        <p>• A transformação de Helmert executa um simples escalonamento e transformações de rotação;</p>
+        <p>• O algoritmo Polinomial 1-3 está entre os algoritmos mais utilizados para ajustar a origem
+            e o destino dos pontos de controle. O algoritmo polinomial mais amplamente utilizado é a
+            transformação polinomial de segunda ordem, o que permite alguma curvatura. A transformação
+            polinomial de primeira ordem (afim) preserva a colinearidade e permite apenas o
+            escalonamento, translação e rotação;</p>
+        <p>• O algoritmo Suavizador em Lâminas Finas (TPS) é o método mais moderno de
+            georeferenciamento, que permite introduzir deformações locais nos dados. Este algoritmo é
+            útil quando dispomos de originais de baixa qualidade;</p>
+        <p>• A transformação Projetiva é uma rotação linear e de translação de coordenadas.</p>
+        <h4>Método de reamostragem</h4>
+        <p>O tipo de amostragem a escolher irá depender dos seus dados de entrada e do objetivo do
+            trabalho. Se não quiser mudar as tonalidades da imagem, deverá escolher “Vizinho mais
+            próximo”, uma vez que a ‘‘mostragem cúbica” irá fornecer um resultado mais suavizado.</p>
+        <p>No QGIS, é possível escolher entre cinco diferentes métodos de reamostragem:</p>
+        <p>1. Vizinho mais próximo<br>
+            2. Linear<br>
+            3. Cúbico<br>
+            4. Cúbico suavizado<br>
+            5. Lanczos<br></p>
+        <h4>Configurações de transformação</h4>
+        <p>Existem várias opções que devem ser definidas para o arquivo raster (georeferenciado) de
+            saída.</p>
+        <p>• A caixa de verificação <bold>Criar world file</bold> está apenas disponível se decidir usar o tipo de
+            transformação linear, pois significa que a sua imagem raster atualmente não será
+            transformada. Nesse caso, o campo <bold>Raster de Saída</bold> não está ativo, porque apenas será criado
+            um novo world-file;</p>
+        <p>• Para outro tipo de transformação é necessário definir um <bold>Raster de Saída. Por padrão um
+                novo arquivo ([nome]_modified) será criado na mesma pasta junto da imagem raster
+                original;</p>
+        <p>• Como próximo passo, necessitamos definir o <bold>SRC</bold> (Sistema de Referência de Coordenadas) para
+            o raster georeferenciado;</p>
+        <p>• Também é possível gerar um mapa em pdf e também um relatório pdf. O relatório inclui
+            informações sobre os parâmetros de transformação utilizados, além de uma imagem dos
+            resíduos e uma lista com todos os GCPs e seus erros RMS.</p>
+
+        <p>• Além disso, é possível ativar a caixa de diálogo <bold>Acertar a resolução de saída</bold> e definir a
+            resolução dos pixels do
+            raster de saída. Como padrão, as resoluções horizontal e vertical são iguais a 1;</p>
+        <p>• A caixa <bold>Use 0 para transparência quando necessário</bold> pode ser ativada, caso os pixels com valor
+            0 devam ser visualizados como
+            transparentes;</p>
+        <p>• Finalmente, “Carregar no QGIS ao concluir” carrega o raster de saída automaticamente
+            para o enquadramento do mapa do QGIS depois de ser feita a transformação.</p>
+        <h4>Mostrando e adaptando as propriedades do raster</h4>
+        <p>Clicando no menu <bold>Propriedades do raster</bold> em Opções, abrirá a caixa de diálogo com as propriedades
+            do raster que
+            será georeferenciado.</p>
+        <h4>Configurando o georeferenciador</h4>
+        <p>• É possível definir a visualização ou não das coordenadas GCPs e/ou IDs;</p>
+        <p>• Podem ser definidas como unidades residuais, pixels ou unidades do mapa;</p>
+        <p>• Para o relatório PDF podem ser definidas as margens direita e esquerda e
+            também o tamanho do papel para o mapa PDF;</p>
+
+        <p>• Por último, também pode-se ativar a caixa <bold>Mostrar a janela do
+                Georeferenciador ancorada.</bold>
+        </p>
+        <h4>Iniciando a transformação</h4>
+        <p>Depois de registrar todos os GPCs e as configurações de transformação definidas,
+            pressione o botão “Iniciar georeferenciamento” para criar o novo raster georeferenciado.</p>
+        <h2 id="3.4"><br><br>3.4. VISUALIZAÇÃO E SELEÇÃO DE INFORMAÇÃO</h2>
+        <p>Essas ferramentas permitem obter uma série de informações a respeito das feições
+            visualizadas no mapa.</p>
+        <h3 id="3.4.1"><br><br>3.4.1. Identificar feições</h3>
+        <p>Esta ferramenta exibe um quadro referente à feição clicada, contendo informações
+            dos atributos armazenados na Tabela. É necessário que o arquivo do qual se
+            deseja obter as informações esteja selecionado no painel de camadas conforme a
+            figura a seguir.</p>
+        <h3 id="3.4.2"><br><br> 3.4.2. Rotular as feições</h3>
+        <p>Desejamos, por exemplo, visualizar o nome das Prefeituras Regionais. Para
+            isso, em Propriedades > Rótulos, escolhemos o campo para visualizar:</p>
+        <p>Resultando:</p>
+        <h3 id="3.4.3"><br><br>3.4.3. Selecionar e desselecionar feições</h3>
+        <p>Esta ferramenta permite a seleção de feições de diferentes formas:</p>
+        <p>Uma feição simples</p>
+        <p>Feições através de polígono</p>
+        <p>Para desfazer a seleção:</p>
+        <h3 id="3.4.4"><br><br>3.4.4. Seleção espacial ou consulta espacial</h3>
+        <p>Por exemplo, desejamos selecionar as quadras que pertençam a uma
+            prefeitura regional. Trata-se de uma consulta à "camada quadras" que
+            estejam dentro da prefeitura regional selecionada previamente.</p>
+        <p>Esse complemento tem por objetivo permitir a realização de análises
+            espaciais entre as camadas. Para utilizá-la, deve haver ao menos
+            duas camadas adicionadas. Para acionar a ferramenta clique em Vetor
+            > Consulta Espacial > Consulta Espacial:</p>
+        <p>O termo adotado pelo QGIS para atender a condição dentro é “Inserir”</p>
+        <p>Apresentando o resultado conforme a seguir:</p>
+        <p>No mapa:</p>
+        <h3 id="3.4.5"><br><br>3.4.5. Salvar a seleção como um novo arquivo</h3>
+        <p>A tela da pesquisa espacial permite salvar diretamente a seleção
+            como um novo arquivo.</p>
+        <p>Temos a opção de salvar em vários formatos, inclusive KML do
+            Google Earth e DXF do AutoCAD:</p>
+        <p>Também precisamos definir o SRC do arquivo a ser gerado. O SRC
+            usado pelo Google é o WGS 84, enquanto o MDC adota SIRGAS2000 /
+            UTM zone 23S.</p>
+        <p>Caso desejemos ter a nova camada incorporada imediatamente ao
+            mapa, basta assinalar a opção “Adicionar arquivo salvo ao mapa”:</p>
+        <p>Assim dispomos de todas as funcionalidades para a nova camada.</p>
+        <h3 id="3.4.6"><br><br>3.4.6. Ferramentas de medir "linha", "área" e
+            "ângulos"</h3>
+        <p>Essas ferramentas permitem medir distâncias, áreas e ângulos.
+            Para que a medição esteja correta deve ser utilizada a
+            projeção UTM (Universal Transversa de Mercator).</p>
+        <p>No menu Configurações > Opções > “Ferramentas de mapa”, ao
+            optarmos por “manter unidade base” na “Ferramenta de
+            medida”, a unidade será a mesma das coordenadas.</p>
+        <p>Medir linha</p>
+        <p>Medir área (unidade metros quadrados – m²)</p>
+        <p>Medir área (unidade hectares – ha)</p>
+        <p>Note que a definição visual da medição gera uma imprecisão do
+            resultado.</p>
+        <h3 id="3.4.7"><br><br>3.4.7. Abrir tabela de atributos</h3>
+        <p>Ao clicar nesta ferramenta, é aberta uma tabela contendo
+            as informações referentes a todas as feições existentes
+            no arquivo. Esta tabela refere-se aos arquivos com a
+            extensão *.DBF que fazem parte dos arquivos de formato
+            shapefile (*.SHP). Nela podem ficar armazenadas as mais
+            diversas informações a respeito das feições como, por
+            exemplo: área, perímetro, tipo de uso, classe de
+            capacidade de uso, possíveis restrições ambientais etc.
+            Cada uma dessas informações presentes em uma tabela é
+            chamada de atributo, sendo que cada atributo pode ter
+            diversas linhas que correspondem a cada feição vetorial
+            existente.</p>
+        <p>Também é possível selecionar feições por meio da tabela
+            de atributos, de forma simples, basta clicar na linha do
+            elemento desejado na tabela de atributos para que no
+            mapa a feição correspondente àquela linha fique com a
+            cor referente à seleção de feições. Para isso bastar
+            selecionar, ao clicar em algum elemento selecionado da
+            linha do atributo, em "aproximar para a feição".</p>
+        <p>As ferramentas de manipulação de atributos permitem
+            operações importantes:</p>
+        <h3 id="3.4.8"><br><br>3.4.8. Seleção de objetos por
+            condição</h3>
+        <p>Para isso, usamos o botão "selecionar feições usando
+            uma expressão":</p>
+        <p>No nosso exemplo, podemos selecionar a Quadra Fiscal
+            pelo código que se encontra em dois campos: qd_setor
+            e qd_fiscal:</p>
+        <p>Assim, podemos visualizar apenas as feições (objetos)
+            selecionadas na tabela e no mapa:</p>
+        <p>O resultado da seleção:</p>
+        <p>Para “limpar” a seleção, ou Desselecionar:</p>
+        <p>Outro exemplo de critério de seleção:</p>
+        <p>Desejamos ter as prefeituras regionais com área maior
+            que 47.000.000 m2 ou 47 km2.</p>
+        <h2 id="3.5"><br><br>3.5. CLASSIFICAÇÃO POR ATRIBUTOS</h2>
+        <p>Os arquivos, assim que carregados no QGIS,
+            apresentam uma cor única que nem sempre facilita
+            a visualização e a compreensão do tema referente
+            àquele mapa. Entretanto, é possível modificar a
+            apresentação do mapa tornando-a mais
+            interessante e realçando as características
+            desejadas.</p>
+        <p>A diversidade de visualizações em que um
+            determinado arquivo poderá ser apresentado
+            dependerá essencialmente dos atributos
+            existentes na sua tabela de atributos. A seguir
+            entenderemos melhor esta afirmação.</p>
+        <p>No arquivo aberto, note que a apresentação apenas
+            exibe o limites de prefeituras regionais, que
+            por estarem todos na mesma cor dificulta
+            diferenciá-las. Para melhorar a visualização,
+            com o botão direito do mouse clique sobre a
+            camada desejada e em seguida clique em “Abrir
+            Tabela de Atributos”. Nela podemos ver todos os
+            atributos que estão relacionados às feições.
+            Note que temos campos como atributos de texto e
+            de números; podemos utilizar estes dados para
+            classificar o nosso mapa e facilitar a
+            compreensão das informações.</p>
+        <p>No painel de camadas, onde são exibidos os
+            arquivos carregados, clique com o botão direito
+            do mouse sobre a camada desejada e em seguida
+            clique no botão “Propriedades”.</p>
+        <p>Será aberta uma janela com algumas abas, na aba “Estilo” podemos alterar o tipo de legenda, clicando no item veremos várias opções: “Símbolo
+            simples” que está acionada por padrão, “Graduado” que funciona para atributos numéricos, “Categorizado” que funciona para atributos numéricos e de texto e outros.</p>
+        <p>Podemos alterar ainda, o tipo de preenchimento e
+            a sua cor, o tipo de contorno, sua cor e
+            espessura.</p>
+        <p>Procure testar diferentes configurações e
+            comparar os resultados até obter o que melhor se
+            ajuste.</p>
+        <p>Exemplo de “Categorizado”:</p>
+        <p>Para usar a opção “Graduado”, vamos criar um novo
+            campo para área, portanto numérico:</p>
+        <p>Na tabela de atributos, ativamos o modo de
+            “edição”, habilitando assim a ferramenta
+            “calculadora”.</p>
+        <p>Na calculadora, criamos um novo campo denominado
+            “AREA_M2”, do tipo “número decimal” com tamanho
+            15 e precisão 2; definimos então qual será o
+            atributo preenchido automaticamente com base na
+            geometria da camada, escolhida na Lista de
+            funções, conforme imagem a seguir:</p>
+        <p>Na tabela agora podemos ver o campo preenchido, e
+            optar pela ordem crescente clicando no nome do
+            campo:</p>
+        <p>Para salvar a tabela basta clicar no “disquete”
+            da caixa de atributos.</p>
+        <p>Podemos então classificar o mapa de acordo com o
+            campo recém criado, voltando ao estilo com a
+            opção graduado para o campo “AREA_M2” em quatro
+            classes. Note que há opções de Cor e Modo, esta
+            última permitindo diferentes agrupamentos
+            estatísticos com os valores.</p>
+        <p>Como escolhemos a opção intervalo igual, as
+            prefeituras regionais com as duas maiores áreas
+            (Parelheiros e Capela do Socorro) ficaram
+            isoladas em suas classes. Mudando para quantil,
+            podemos ver outro mapa, no qual as classes
+            contêm mesma quantidade de prefeituras
+            regionais:</p>
+        <h2 id="3.6"><br><br>3.6. CRIAR E EDITAR CAMADAS VETORIAIS</h2>
+        <p>A criação de camadas vetoriais é acessada em
+            camadas > Criar nova camada.</p>
+        <p>Escolhido o formato shapefile, devemos
+            definir a geometria das feições a serem
+            criadas (ponto, linha ou polígono), bem como
+            os campos (atributos) que desejamos:</p>
+        <p>A seguir definimos o SRC:</p>
+        <p>Utilizamos preferencialmente o padrão adotado
+            no Brasil, SIRGAS2000 / UTM zone 23S, EPSG:
+            31983.</p>
+        <p>Gravamos o novo arquivo com nome e pasta
+            desejados:</p>
+        <p>Assim, podemos habilitar a edição da nova
+            camada e utilizar as ferramentas
+            disponíveis:</p>
+        <p>A cada feição adicionada, preenchemos os
+            atributos correspondentes:</p>
+        <p>Um resultado hipotético:</p>
+        <p>Podemos criar campos adicionais na nova
+            camada, por exemplo, coordenadas X e Y.</p>
+        <h2 id="3.7"><br><br>3.7. IMPORTAR DADOS DE TABELAS</h2>
+        <h3 id="3.7.1"><br><br>3.7.1. Adicionando
+            uma camada a partir de um arquivo de
+            texto delimitado.</h3>
+        <p>Podemos criar uma nova camada a
+            partir de um arquivo previamente
+            elaborado com as coordenadas dos
+            pontos em um SRC específico.</p>
+        <p>No menu “camada”, clique em
+            “adicionar camada” e depois na opção
+            “A partir de um texto delimitado”.</p>
+        <p>Um exemplo típico é a geração de
+            coordenadas em aplicativos de
+            georeferenciamento por endereços,
+            sendo necessário conhecer os campos
+            com as coordenadas X e Y, que podem
+            estar em SRCs em UTM ou em
+            coordenadas geográficas (longitude e
+            latitude), ou outros.</p>
+        <p>Temos um arquivo Excel como exemplo,
+            salvo em formato CSV:</p>
+        <p>Ao informar o “Nome do Arquivo”, os
+            dados devem ser fornecidos conforme
+            o seguinte:</p>
+        <p>Neste caso, as coordenadas são UTM,
+            referenciadas ao datum SIRGAS2000.</p>
+        <p>Resultado no mapa:</p>
+        <h3 id="3.7.2"><br><br>3.7.2. Adicionando uma camada a partir de um arquivo de planilha</h3>
+        <p>Podemos criar uma nova camada a partir de um arquivo previamente elaborado em planilha de
+            cálculos (LibreOffice,Excel etc.).</p>
+        <p>Adicionar camada vetorial no menu Camada ou Barra de Ferramentas.</p>
+        <p>Escolhemos o arquivo relativo à planilha, neste caso, Excel:</p>
+        <p>A partir de então, a tabela aparece como uma camada, e podemos visualizar os dados clicando
+            com o botão direito sobre o nome da camada no painel de camadas e escolhendo 
+            "Abrir tabeloa de atributos":</p>
+        <p>Neste exemplo, o arquivo Excel continua apenas uma planilha que foi imediatamente carregada 
+            pressupondo a primeira linha como título:</p>
+        <p> Caso houver mais de uma planilha no arquivo, será solicitada a escolha de uma delas.</p>
+        <p> Pretendemos visualizar esses dados no mapa, e para isso devemos <bold>unir</bold> a tabela
+             ao mapa por um <bold>identificador</bold> comum. Nesse caso, o número de código 
+             do Distrito Municipal.</p>
+        <p>Adicionando então o mapa de distritos podemos proceder à união.</p>
+        <p>Nas propriedades da camada, disponível ao clicar com o botão direito,
+             temos a opção "Uniões":</p>
+        <p>No botão "+", escolhemos a tabela em "Unir camada", o campo identificador em "Unir campo" e o
+             identificador da tabela em "Campo alvo":</p>
+        <p>A partir disso, podemos trabalhar com qualquer atributo da tabela como pertencentes
+            ao mapa, e assim produzir mapas temáticos e fazer análises:</p>
+        <p>Vejamos um exemplo com o atributo "Status da unidade...:</p>
+        <p>No mapa:</p>
+        <h2 id="3.8"><br><br>3.8. OPÇÕES DE IMPRESSÃO</h2>
+        <h3 id="3.8.1"><br><br>3.8.1. Noções básicas sobre o compositor de impressão</h3>
+        <p>O compositor de impressão pode ser acessado por meio do ícone Gerenciador do Compositor.</p>
+        <p>Na tela do Gerenciador do Compositor podemos:<br>
+            -Adicionar uma nova página de impressão;<br>
+            -Mostrar uma página de impressão já criada;<br>
+            -Remover uma página de impressão;<br>
+            -Renomear uma página de impressão;<br></p>
+        <p>Clique em Adicionar para criar uma nova página de impressão e depois pressione Fechar.</p>
+        <p>A tela de composição de impressão é aberta com uma página em branco.</p>
+        <h3 id="3.8.2"><br><br>3.8.2. Abas de configurações (configurações da folha de impressão)</h3>
+        <p>Nesta área do compositor de impressão, podemos configurar na aba "Composição" todas as opções que
+            dizem respeito à página de impressão como tamanho do papel, orientação etc.</p>
+        <p>Na aba "Propriedades do Item", aparecem as opções de configurações do item que
+            está selecionado no momento, isto é, se a janela de mapa estiver selecionada 
+            na aba item aparecerão as opções de configuração do mapa como, por exemplo, 
+            a escala de desenho.</p>
+        <p>Na aba "Histórico de comandos", fica registrada a sequência dos comandos utilizados durante
+            a elaboração de um mapa impresso.</p>
+        <p> No item "Guias e grades", podemos configurar uma grade para orientar o posicionamento
+            dos itens do mapa na folha de papel.</p>
+        <h3 id="3.8.3"><br><br>3.8.3. Janela de mapas</h3>
+        <p>Insere uma janela de mapa acioando o ícone e clicando e arrastando o mouse no 
+            interior da área de desenho de mapa.</p>
+        <p>Para evitar que a janela saia do lugar depois de cirada podemos travar a posição clicando com o botão direito
+             do mouse sobre a janela. Isto é válido para qualquer tipo de item inserido no mapa.
+              O mapa que estiver atio no QGIS aparece na janela de mapa.</p>
+        <h3 id="3.8.4"><br><br>3.8.4. Selecionando e movendo o mapa</h3>
+        <p>Clique no ícone "Selecionar/mover item" e selecione a janela de mapa que acabamos de criar</p>
+        <p>Clique no ícone "Mover item do conteúdo" e clicando sobre o mapa, arraste-o para movê-lo 
+            dentro da janela.</p>
+        <p>Para isso crie uma nova janela de mapa e com a ferramenta, mova o mapa. Girando 
+            o botão central do mouse, podemos dar um zoom da mesma forma que fazemos na tela do QGIS.</p>
+        <p>Notamos que as escalas ficam registradas para cada item quando clicamos sobre ele. 
+            Na figura anterior a escala da janela menor é 50.000, ou seja, 1:50.000, maior que a 
+            escala da janela geral (1:200.000).</p>
+        <h3 id="3.8.5"><br><br>3.8.5. Configurando a janela de mapa</h3>
+        <p>Com a ferramenta de seleção, clique sobre o mapa principal e clique na aba "Propriedades do Item". 
+            Esta aba contém subitens.</p>
+        <p>O primeiro é "Mapa". Nesta opção podemos configurar a Largura e a Altura da janela do mapa, a Escala 
+        de desenho e a Rotação. Coloque a escala 1:100.000 para o mapa que estamos trabalhando.</p>
+        <p>A opção "Extensão" apresenta as coordenadas extremas do mapa e o botão fixa o mapa à 
+            extensão da tela. Se ao desenha uma janela de mapa esta aparecer vazia, use esse botão 
+            para enquadrar a área do mapa idêntica àquela da janela principal.</p>
+        <h3 id="3.8.6"><br><br>3.8.6. Inserindo uma imagem</h3>
+        <p>Na barra de ferramentas, acione o ícone e clique na folha de desenho.
+            Irá aparecer uma janela e as opções da aba "Propriedades do Item" irão 
+            automaticamente se modificar para as opções da figura.</p>
+        <p>Qualquer tipo de arquivo de imagem(jpg, bmp, tif etc.) pode ser inserido, 
+            bastando apontar o seu devido caminho.</p>
+        <h3 id="3.8.7"><br><br>3.8.7. Inserindo um rótulo</h3>
+        <p>Adicionar novo rótulo: este ícone insere uma caixa de texto no mapa.
+             Selecione a ferramenta e clique sobre o mapa.</p>
+        <p>O rótulo aparece com o o texto "QGIS" por padrão, selecione o rótulo e verifique 
+            as modificações na aba "Propriedades do Item".</p>
+        <h3 id="3.8.8"><br><br>3.8.8. Inserindo uma legenda</h3>
+        <p>Com o ícone "Adicionar nova legenda" podemos adicionar uma legenda ao mapa de acordo 
+            com o que classificamos na janela do QGIS. Clique no ícone e depois clique na área do mapa.
+             A legenda irá aparecer conforme a classificação e as camadas carregadas na janela do QGIS.</p>
+        <p>Podemos trabalhar a legenda com alguns recursos:</p>
+        <p>Editando os nomes das camadas:</p>
+        <p>Alterando a ordem:</p>
+        <h3 id="3.8.9"><br><br>3.8.9. Inserindo uma escala</h3>
+        <p>Podemos adicionar uma escala ao mapa:</p>
+        <h3 id="3.8.10"><br><br>3.8.10. Inserindo tabelas</h3>
+        <p>Podemos adicionar ao mapa a tabela de atributos de uma camada.</p>
+        <h3 id="3.8.11"><br><br>3.8.11. Salvar o mapa em outros formatos</h3>
+        <p>Podemos gerar arquivos em formatos diversos, seja como imagem, ou como vetor. 
+            Salvando como imagem, temos JPG, BMP, TIF, PNG, entre outros:</p>
+        <p>Para salvar arquivos de melhor resolução temos a opção PDF:</p>
+        <p>Vale lembrar que não será gerado um PDF caso a opção "Imprimir como raster" 
+            esteja assinalada:</p>
+        <h1 id="4"><br><br>4. MATERIAL DE REFERÊNCIA</h1>
+        <p>Base Cartográfica:</p>
+        <p>Toda produção cartográfica presente nos acervos digitais foi produzida ou 
+            reproduzida pelo GEOINFO, que lida com dados cartográficos do município.</p>
+        <h2 id="4.1"><br><br>4.1. Base Cartográfica Vetorial</h2>
+        <p>Dentre os arquivos disponíveis, foram selecionados alguns para efeito de exercício prático:</p>
+        <p>Camadas:</p>
+        <p>Prefeituras regionais; distritos; quadras; lotes; logradouros.</p>
+        <h2 id="4.2"><br><br>4.2. GeoSampa e Mapa Digital da Cidade (MDC)</h2>
+        <p>O GeoSampa está disponível em ambiente INTRANET (incluindo o MDC):<br>
+        <a href="http://geosampa.prodam/">http://geosampa.prodam/</a></p>
+        <p>E em ambiente internet:<br>
+        <a href="http://https://geosampa.prefeitura.sp.gov.br/PaginasPublicas/_SBC.aspx">http://https://geosampa.prefeitura.sp.gov.br/PaginasPublicas/_SBC.aspx</a></p>
+        <p>As camadas utilizadas estão disponíveis em formato shapefile no GeoSampa.</p>
+        <h1 id="5"><br><br>REFERÊNCIAS BIBLIOGRÁFICAS E SITES DE INTERESSE</h1>
+        <p>Barberi, A.; Santos, H. G. dos; Oliveira, I. E. de A.; Gomes, M. F. <i>Elaboração de Mapas Temáticos no Quantum GIS.</i>
+             Ministério do Desenvolvimento Agrário/Instituto Nacional de Colonização e Reforma Agrária/Diretoria de Obtenção de Terras e Implantação de Projetos de Assentamentos. 
+             Quinta Versão, 04/2012. Disponível em: <br>
+        <a href ="http://www.incra.gov.br/servicos/publicacoes/manuais-eprocedimentos/file/1193-apostila-qgis-incra-5-versao">
+            http://www.incra.gov.br/servicos/publicacoes/manuais-eprocedimentos/file/1193-apostila-qgis-incra-5-versao</a></p>
+        <h4>Guia do Usuário</h4>
+        <p><a href ="https://docs.qgis.org/2.18/pt_BR/docs/user_manual/">https://docs.qgis.org/2.18/pt_BR/docs/user_manual/</a></p>
+        <h4>Documentação do projeto</h4>
+        <p><a href ="http://qgis.org/pt_BR/docs/index.html">http://qgis.org/pt_BR/docs/index.html</a></p>
+        <h4>Fórum de usuários</h4>
+        <p><a href ="https://qgisbrasil.org/#como-participar">https://qgisbrasil.org/#como-participar</a></p>
+        <h4>Tutoriais do QGIS </h4>
+        <p><a href ="http://www.processamentodigital.com.br/category/tutoriais/qgis/">http://www.processamentodigital.com.br/category/tutoriais/qgis/</a></p>
+        <h4>Site de Anderson Medeiros </h4>
+        <p><a href ="http://www.andersonmedeiros.com/category/geotecnologias/sig/quantum-gis/">http://www.andersonmedeiros.com/category/geotecnologias/sig/quantum-gis/</a></p> 
+        <p>São Paulo, junho 2018<br><br> 
+            Elaboração:<br> 
+            Secretaria Municipal Urbanismo e Licenciamento – SMUL <br>
+            Coordenadoria de Produção e Análise de Informação – GEOINFO <br></p>
+
+
+
+
+
+
+    </div>
+</body>
+
 </html>
